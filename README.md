@@ -8,4 +8,4 @@ Run `ng serve` for a dev server, then navigate to `http://localhost:4200/` (alte
 
 ### Usage
 
-Log in with your Google account to create new posts.
+Log in with your Google account to create/edit/delete your posts.
