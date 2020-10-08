@@ -1,0 +1,37 @@
+footer {
+  background-color: #557a95;
+  color: black;
+  padding: 30px;
+  width: 96.85%;
+  bottom: 0;
+  text-align: center;
+}
+hr {
+  margin-top: 50px;
+  border: 3px solid #bdbdbd8a;
+  margin-bottom: -2px;
+}
+.parent{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fa{
+  width: 25px;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  color: white;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-linkedin {
+  background: #007bb5;
+}
+.fa-github {
+  background: #000000;
+}

@@ -1,0 +1,27 @@
+<section>
+  
+    <h2>Create New Post</h2>
+  
+    <label for="file" class="custom-file-upload">
+      <i class="fa fa-cloud-upload"></i> Choose Picture
+    </label>
+    <input id="file" type="file" name="file" (change)="uploadImage($event)"/>
+        <div [hidden]="!uploadPercent">
+          <mat-progress-bar mode="determinate" value="{{ uploadPercent | async }}"></mat-progress-bar>
+        </div>
+        <div [hidden]="!image">
+          <img [src]="image || '//:0' ">
+        </div>
+  
+        <mat-form-field>
+          <input matInput placeholder="Art title" [(ngModel)]="title" name="title">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <textarea matInput placeholder="Art description" [(ngModel)]="description" name="description" rows="10"></textarea>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)="createArt()" color="accent" [disabled]="!title || !description || !image">{{saving}}</button>
+  
+  </section>
+  

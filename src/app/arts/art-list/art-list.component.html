@@ -1,0 +1,13 @@
+<section>
+    <mat-card style="cursor: pointer;" routerLink="{{art.id}}" *ngFor="let art of arts | async">
+      <img class="image" mat-card-image src="{{art.image}}" alt="{{art.title}}">
+      <mat-card-content>
+        <h2 style="cursor:pointer">{{art.title}}</h2>
+        <p>
+          <small style="font-style: italic;">Art was posted by {{art.author}} &bull; on {{art.published.toDate() | date:"fullDate"}}</small>
+        </p>
+        <p style="font-size: 16px;">{{ art.description | slice:0:46 }} <span style="color: #000000be">{{ art.description.length > 46 ? '... read more' : '' }}</span></p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+  

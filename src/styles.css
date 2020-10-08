@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~material-icons/iconfont/material-icons.css';
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    background-color: #000000be;
+    color: rgba(255, 255, 255, 0.89);
+}
+@font-face {
+    font-family: 'norwester';
+    src: url('assets/fonts/norwester.otf') format('opentype');
+}
+.mat-toolbar {
+    height: 12vh;
+    background: #557a95;
+    font-family: 'norwester' !important;
+}
+.mat-card{
+    background: #bdbdbd8a;
+    color:rgba(255, 255, 255, 0.89);
+    font-family: 'norwester' !important;
+}
+button {
+    font-family: 'norwester' !important;
+}
+h2 {
+    font-family: 'norwester' !important;
+    color: #000000be;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px;
+}
+.footer, .push {
+    height: 142px;
+}

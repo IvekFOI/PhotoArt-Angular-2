@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span routerLink="/">
+        <img class="img-responsive" src="assets/pictures/logo.jpg">
+      </span>
+      <span class="spacer"></span>
+      <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
+        <button (click)="auth.logout()" mat-button>Logout</button>
+      </div>
+      <ng-template #showLogin>
+        <button (click)="auth.login()" mat-button>Google Login</button>
+      </ng-template>
+    
+      <span routerLink="/new">
+        <img class="img-responsive" src="assets/pictures/uploadphoto.jpg">
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  

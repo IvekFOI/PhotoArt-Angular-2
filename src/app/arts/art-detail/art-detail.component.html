@@ -1,0 +1,46 @@
+<ng-container *ngIf="art">
+
+    <div [hidden]="!editing">
+      <mat-card>
+        <h1>Edit</h1>
+          <mat-form-field>
+            <input matInput placeholder="Art title" [(ngModel)]="art.title" name="title">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <textarea matInput placeholder="Art description" [(ngModel)]="art.description" name="description" rows="7"></textarea>
+          </mat-form-field>
+          <br>
+          <button mat-raised-button (click)="updateArt()" color="accent">Save</button>
+          <button mat-button (click)="editing=false" *ngIf="editing">Cancel</button>
+    </mat-card>
+    </div>
+  
+    <div [hidden]="editing">
+      <mat-card>
+        <img mat-card-image src="{{art.image}}" alt="{{art.title}}">
+        <h2>{{art.title}}</h2>
+        <p>
+          <small style="font-style: italic;">Art was posted by {{art.author}} &bull; on {{art.published.toDate() | date:"fullDate"}}</small>
+        </p>
+        <mat-card-content>
+          <p>{{ art.description }}</p>
+        </mat-card-content>
+        <mat-card-actions *ngIf="authService.currentUserId === art.authorId">
+          <button mat-icon-button (click)="editing=true">
+            Edit 
+            <span class="material-icons">
+              edit
+            </span>
+          </button>
+          <button style="margin-left:16px" mat-icon-button (click)="delete(art.id)">
+            Delete 
+            <span class="material-icons">
+              delete
+            </span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </ng-container>
+  
